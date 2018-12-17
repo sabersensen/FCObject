@@ -8,7 +8,7 @@ class FCRootClass extends FCObject{
 
     responseId: string;
 
-    responseData: FCResponseModel;
+    responseData: Responsedata;
 
     constructor(data: object){
         super(data);
@@ -24,17 +24,17 @@ class FCRootClass extends FCObject{
 
     modelContainerPropertyGenericClass = function () {
        return{
-            'responseData':FCResponseModel,
+            'responseData':Responsedata,
        }
     }
 
 }
 // @ts-ignore
-class FCResponseModel extends FCObject{
+class Responsedata extends FCObject{
 
     callbackId: string;
 
-    data: FCDataModel;
+    data: FCData;
 
     errno: number;
 
@@ -43,38 +43,6 @@ class FCResponseModel extends FCObject{
     service: string;
 
     action: string;
-
-    constructor(data: object){
-        super(data);
-        if (!data) return;
-        // @ts-ignore
-        this.modelAddProperty.call(this, data);
-    }
-
-    modelCustomPropertyMapper = function () {
-       return{
-       }
-    }
-
-    modelContainerPropertyGenericClass = function () {
-       return{
-            'data':FCDataModel,
-       }
-    }
-
-}
-
-
-// @ts-ignore
-class FCDataModel extends FCObject{
-
-    code: number;
-
-    data: FCData;
-
-    message: string;
-
-    total: string;
 
     constructor(data: object){
         super(data);
@@ -100,6 +68,38 @@ class FCDataModel extends FCObject{
 // @ts-ignore
 class FCData extends FCObject{
 
+    code: number;
+
+    data: Data;
+
+    message: string;
+
+    total: string;
+
+    constructor(data: object){
+        super(data);
+        if (!data) return;
+        // @ts-ignore
+        this.modelAddProperty.call(this, data);
+    }
+
+    modelCustomPropertyMapper = function () {
+       return{
+       }
+    }
+
+    modelContainerPropertyGenericClass = function () {
+       return{
+            'data':Data,
+       }
+    }
+
+}
+
+
+// @ts-ignore
+class Data extends FCObject{
+
     notUploadStudentCount: number;
 
     uploadedClzssNameList: Array<any>;
@@ -118,7 +118,7 @@ class FCData extends FCObject{
 
     absentCount: number;
 
-    uploadClzssList: Array<FCUploadClzssModel>;
+    uploadClzssList: Array<Uploadclzsslist>;
 
     uploadStudentCount: number;
 
@@ -126,7 +126,7 @@ class FCData extends FCObject{
 
     questionCount: string;
 
-    subjectInfoList: Array<FCSubjectModel>;
+    subjectInfoList: Array<Subjectinfolist>;
 
     paperIds: string;
 
@@ -172,8 +172,8 @@ class FCData extends FCObject{
 
     modelContainerPropertyGenericClass = function () {
        return{
-            'uploadClzssList':FCUploadClzssModel,
-            'subjectInfoList':FCSubjectModel,
+            'uploadClzssList':Uploadclzsslist,
+            'subjectInfoList':Subjectinfolist,
        }
     }
 
@@ -181,7 +181,7 @@ class FCData extends FCObject{
 
 
 // @ts-ignore
-class FCSubjectModel extends FCObject{
+class Subjectinfolist extends FCObject{
 
     examId: number;
 
@@ -214,7 +214,7 @@ class FCSubjectModel extends FCObject{
 
 
 // @ts-ignore
-class FCUploadClzssModel extends FCObject{
+class Uploadclzsslist extends FCObject{
 
     clzssType: number;
 

@@ -24,7 +24,7 @@ var FCRootClass = /** @class */ (function (_super) {
         };
         _this.modelContainerPropertyGenericClass = function () {
             return {
-                'responseData': FCResponseModel,
+                'responseData': Responsedata,
             };
         };
         if (!data)
@@ -36,30 +36,9 @@ var FCRootClass = /** @class */ (function (_super) {
     return FCRootClass;
 }(FCObject));
 // @ts-ignore
-var FCResponseModel = /** @class */ (function (_super) {
-    __extends(FCResponseModel, _super);
-    function FCResponseModel(data) {
-        var _this = _super.call(this, data) || this;
-        _this.modelCustomPropertyMapper = function () {
-            return {};
-        };
-        _this.modelContainerPropertyGenericClass = function () {
-            return {
-                'data': FCDataModel,
-            };
-        };
-        if (!data)
-            return _this;
-        // @ts-ignore
-        _this.modelAddProperty.call(_this, data);
-        return _this;
-    }
-    return FCResponseModel;
-}(FCObject));
-// @ts-ignore
-var FCDataModel = /** @class */ (function (_super) {
-    __extends(FCDataModel, _super);
-    function FCDataModel(data) {
+var Responsedata = /** @class */ (function (_super) {
+    __extends(Responsedata, _super);
+    function Responsedata(data) {
         var _this = _super.call(this, data) || this;
         _this.modelCustomPropertyMapper = function () {
             return {};
@@ -75,7 +54,7 @@ var FCDataModel = /** @class */ (function (_super) {
         _this.modelAddProperty.call(_this, data);
         return _this;
     }
-    return FCDataModel;
+    return Responsedata;
 }(FCObject));
 // @ts-ignore
 var FCData = /** @class */ (function (_super) {
@@ -87,8 +66,7 @@ var FCData = /** @class */ (function (_super) {
         };
         _this.modelContainerPropertyGenericClass = function () {
             return {
-                'uploadClzssList': FCUploadClzssModel,
-                'subjectInfoList': FCSubjectModel,
+                'data': Data,
             };
         };
         if (!data)
@@ -100,15 +78,18 @@ var FCData = /** @class */ (function (_super) {
     return FCData;
 }(FCObject));
 // @ts-ignore
-var FCSubjectModel = /** @class */ (function (_super) {
-    __extends(FCSubjectModel, _super);
-    function FCSubjectModel(data) {
+var Data = /** @class */ (function (_super) {
+    __extends(Data, _super);
+    function Data(data) {
         var _this = _super.call(this, data) || this;
         _this.modelCustomPropertyMapper = function () {
             return {};
         };
         _this.modelContainerPropertyGenericClass = function () {
-            return {};
+            return {
+                'uploadClzssList': Uploadclzsslist,
+                'subjectInfoList': Subjectinfolist,
+            };
         };
         if (!data)
             return _this;
@@ -116,12 +97,12 @@ var FCSubjectModel = /** @class */ (function (_super) {
         _this.modelAddProperty.call(_this, data);
         return _this;
     }
-    return FCSubjectModel;
+    return Data;
 }(FCObject));
 // @ts-ignore
-var FCUploadClzssModel = /** @class */ (function (_super) {
-    __extends(FCUploadClzssModel, _super);
-    function FCUploadClzssModel(data) {
+var Subjectinfolist = /** @class */ (function (_super) {
+    __extends(Subjectinfolist, _super);
+    function Subjectinfolist(data) {
         var _this = _super.call(this, data) || this;
         _this.modelCustomPropertyMapper = function () {
             return {};
@@ -135,5 +116,24 @@ var FCUploadClzssModel = /** @class */ (function (_super) {
         _this.modelAddProperty.call(_this, data);
         return _this;
     }
-    return FCUploadClzssModel;
+    return Subjectinfolist;
+}(FCObject));
+// @ts-ignore
+var Uploadclzsslist = /** @class */ (function (_super) {
+    __extends(Uploadclzsslist, _super);
+    function Uploadclzsslist(data) {
+        var _this = _super.call(this, data) || this;
+        _this.modelCustomPropertyMapper = function () {
+            return {};
+        };
+        _this.modelContainerPropertyGenericClass = function () {
+            return {};
+        };
+        if (!data)
+            return _this;
+        // @ts-ignore
+        _this.modelAddProperty.call(_this, data);
+        return _this;
+    }
+    return Uploadclzsslist;
 }(FCObject));

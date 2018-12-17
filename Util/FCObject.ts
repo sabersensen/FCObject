@@ -1,11 +1,11 @@
 // @ts-ignore
 interface FCObjectInterface {
 
-    /* 用于*/
+    /* 遍历添加属性*/
     modelAddProperty:(data:any)=> void;
-
+    /* 对数据参数改为实体参数 {'data':'model'}*/
     modelCustomPropertyMapper:()=> object;
-
+    /* 定义实体参数 类 {'model':'FCObject'}*/
     modelContainerPropertyGenericClass:()=> object;
 
 }
