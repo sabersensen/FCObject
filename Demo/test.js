@@ -21,7 +21,7 @@ console.log(dataModel);
 data = {
     "responseData" : {
         "action" : "get",
-        "callbackId" : "http://api-test.fclassroom.cn/so-learning/api/learning/exam-info1545028961151",
+        "callbackId" : "",
         "data" : {
             "code" : 0,
             "data" : {
